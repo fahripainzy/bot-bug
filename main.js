@@ -1,7 +1,6 @@
 import "./system/config/global.js";
 import utils from "@bayumahadika/utils";
 import chokidar from "chokidar";
-import express from "express";
 import chalk from "chalk";
 import {
   makeWASocket,
@@ -208,8 +207,6 @@ let usePairingCode = true;
   });
   sock.ev.on("creds.update", saveCreds);
 
-const PORT = process.env.PORT || 3000; // Port harus dari Render
-
   /// ANTICALL
   sock.ev.on("call", (arg) => {
     const { id, from, status } = arg[0];
@@ -224,11 +221,15 @@ const PORT = process.env.PORT || 3000; // Port harus dari Render
   );
 });
 
-// **Menjalankan server Express untuk membuka port**
+import express from "express"; // Pastikan import dengan benar
+const app = express();
+
+const PORT = process.env.PORT || 3000; // Gunakan port dari Render
+
 app.get("/", (req, res) => {
-    res.send("BANG BELI BAWANG, BELI BAWANG GAK PAKE KULIT,BANG JADI ORANG, JADI ORANG JANGAN PELIT PELIT😹");
+  res.send("Server berjalan dengan sukses di Render!");
 });
 
 app.listen(PORT, () => {
-    console.log(`Server berjalan di port ${PORT}`);
+  console.log(`Server berjalan di port ${PORT}`);
 });
