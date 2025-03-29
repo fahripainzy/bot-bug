@@ -1,7 +1,7 @@
 import "./system/config/global.js";
 import utils from "@bayumahadika/utils";
 import chokidar from "chokidar";
-import express = require("express");
+import express from "express";
 import chalk from "chalk";
 import {
   makeWASocket,
