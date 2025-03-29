@@ -227,7 +227,7 @@ const app = express();
 const PORT = process.env.PORT || 3000; // Gunakan port dari Render
 
 app.get("/", (req, res) => {
-  res.send("Server berjalan dengan sukses di Render!");
+  res.send("ADIT SUKA TOBRUT PEN GESEK TT NYA😹");
 });
 
 app.listen(PORT, () => {
