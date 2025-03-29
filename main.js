@@ -207,8 +207,7 @@ let usePairingCode = true;
     }
   });
   sock.ev.on("creds.update", saveCreds);
-  
-  const app = express();
+
 const PORT = process.env.PORT || 3000; // Port harus dari Render
 
   /// ANTICALL
